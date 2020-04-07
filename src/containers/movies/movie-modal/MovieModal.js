@@ -6,15 +6,10 @@ const MovieModal = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  // const myList = () => libraryData.push(props.title);
-  // console.log(props);
+
   return (
     <>
       <div className="buttons">
-        {/* <Button size="sm" className="modalbutton" onClick={handleShow}>
-          Info
-        </Button> */}
-
         <i
           className="fas fa-question-circle"
           onClick={handleShow}
@@ -27,7 +22,7 @@ const MovieModal = (props) => {
 
         <i
           className="fas fa-plus-circle"
-          // onClick={myList}
+          onClick={props.library}
           style={{
             fontSize: "30px",
             cursor: "pointer",
@@ -56,8 +51,6 @@ const MovieModal = (props) => {
       </Modal>
     </>
   );
-  // return <div className="modalContainer"></div>;
 };
-// render(<MovieModal />);
 
 export default MovieModal;

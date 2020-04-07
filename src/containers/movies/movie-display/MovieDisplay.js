@@ -11,6 +11,7 @@ class MovieDisplay extends React.Component {
 
     this.state = {
       movieData: [],
+      libraryData: [],
     };
   }
 
@@ -30,6 +31,10 @@ class MovieDisplay extends React.Component {
   }
 
   render() {
+    const myList = () => {
+      this.state.libraryData.push(this.state.movieData);
+    };
+    console.log(myList);
     let movieList = this.state.movieData.map((item) => {
       return (
         <div className="movieList" key={item.id}>
@@ -42,6 +47,7 @@ class MovieDisplay extends React.Component {
                 title={item.name}
                 rating={item.rating}
                 releaseDate={item.releaseDate}
+                library={myList}
               />
             </Card.Body>
           </Card>
