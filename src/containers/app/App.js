@@ -13,8 +13,8 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/movies" component={Movies} />
-          <Route path="/shows" component={Shows} />
-          <Route path="/library" component={Library} />
+          {/* <Route path="/shows" component={Shows} /> */}
+          {/* <Route path="/library" component={Library} /> */}
         </Switch>
       </Router>
     </React.Fragment>
