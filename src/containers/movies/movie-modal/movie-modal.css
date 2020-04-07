@@ -19,3 +19,12 @@
   font-family: "Mada", sans-serif;
   font-size: 35px;
 }
+.fa-question-circle {
+  font-size: "30px";
+  cursor: "pointer";
+  color: "red";
+}
+
+/* .fa-question-circle:hover {
+  color: #ffffff;
+} */
