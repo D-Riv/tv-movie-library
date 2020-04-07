@@ -10,11 +10,13 @@ class LibraryData extends React.Component {
   }
 
   addToLib = () => {
-    this.setState({ libraryData: this.state.props.data });
+    this.setState({ libraryData: this.props.data });
   };
 
   render() {
+    this.addToLib();
     console.log(this.state.libraryData);
+
     return <div></div>;
   }
 }

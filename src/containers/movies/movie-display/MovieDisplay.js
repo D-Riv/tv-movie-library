@@ -31,13 +31,11 @@ class MovieDisplay extends React.Component {
       });
   }
 
-  libraryRender = () => {
-    return (
-      <div>
-        <LibraryData data={this.state.libraryData} />
-      </div>
-    );
-  };
+  // libraryRender = () => {
+  //   return (
+  //     <div>
+  //     </div>
+  //   );
 
   render() {
     let movieList = this.state.movieData.map((item) => {
@@ -69,7 +67,13 @@ class MovieDisplay extends React.Component {
         </div>
       );
     });
-    return <div className="movieContainer">{movieList}</div>;
+
+    return (
+      <div className="movieContainer">
+        {movieList}
+        <LibraryData data={this.state.libraryData} />;
+      </div>
+    );
   }
 }
 
