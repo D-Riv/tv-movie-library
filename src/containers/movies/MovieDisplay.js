@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
+import "./movieDisplay.css";
 
 const movieUrl = "https://tv-movie-api.herokuapp.com/movie";
 
