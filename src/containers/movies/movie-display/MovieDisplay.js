@@ -31,11 +31,17 @@ class MovieDisplay extends React.Component {
   }
 
   render() {
-    const myList = () => {
-      this.state.libraryData.push(this.state.movieData);
-    };
-    console.log(myList);
     let movieList = this.state.movieData.map((item) => {
+      const myList = () => {
+        this.state.movieData.forEach((movie) => {
+          // console.log(movie._id);
+          // console.log(item.name);
+          if (movie.name == item.name) {
+            this.state.libraryData.push(movie);
+          }
+        });
+        console.log(this.state.libraryData);
+      };
       return (
         <div className="movieList" key={item.id}>
           <Card style={{ width: "15rem", border: "none" }}>

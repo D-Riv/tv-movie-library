@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../Home";
 import Shows from "../Shows";
 import Movies from "../movies/Movies";
-import Library from "../Library";
+import Library from "../watch-library/Library";
 
 function App() {
   return (
