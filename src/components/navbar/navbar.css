@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   background-color: black;
+  font-family: "Roboto", sans-serif;
 }
 .navbar-title {
   color: #ffffff;

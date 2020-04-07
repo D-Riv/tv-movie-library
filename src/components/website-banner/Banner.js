@@ -26,7 +26,7 @@ const Styles = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    font-family: "Secular One", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: 40px;
     color: white;
     padding-top: 100px;
@@ -36,7 +36,7 @@ const Styles = styled.div`
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 150px;
-    font-family: "Secular One", sans-serif;
+    font-family: "Roboto", sans-serif;
   }
   .banner-title {
     font-size: 100px;

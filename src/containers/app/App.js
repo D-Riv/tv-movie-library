@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../Home";
 import Shows from "../Shows";
-import Movies from "../Movies";
+import Movies from "../movies/Movies";
 import Library from "../Library";
 
 function App() {
