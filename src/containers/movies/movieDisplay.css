@@ -1,0 +1,24 @@
+.movieContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /* display: grid;
+  justify-content: center;
+  grid-template-columns: 2fr 2fr 2fr 2fr;
+  grid-gap: 30px; */
+  /* max-width: 80%; */
+  background-color: black;
+}
+.movieList {
+  box-shadow: 5px 5px 5px 5px #5756568e;
+  margin: 15px auto;
+}
+.movieList:hover {
+  transform: scale(1.1);
+  background-color: rgba(248, 246, 246, 0);
+}
+.cardfooter {
+  background-color: rgb(8, 8, 8);
+  height: 3rem;
+}
