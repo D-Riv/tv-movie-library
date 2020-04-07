@@ -25,15 +25,15 @@ const MovieModal = (props) => {
           }}
         ></i>
 
-        {/* <i
+        <i
           className="fas fa-plus-circle"
-          onClick={myList}
+          // onClick={myList}
           style={{
             fontSize: "30px",
             cursor: "pointer",
             color: "lightblue",
           }}
-        ></i> */}
+        ></i>
       </div>
 
       <Modal show={show} onHide={handleClose} centered className="modal">
