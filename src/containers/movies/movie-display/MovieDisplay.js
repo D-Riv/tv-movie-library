@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
 import "./movieDisplay.css";
 import MovieModal from "../movie-modal/MovieModal";
+import LibraryData from "../../watch-library/LibraryData";
 
 const movieUrl = "https://tv-movie-api.herokuapp.com/movie";
 
@@ -29,6 +30,14 @@ class MovieDisplay extends React.Component {
         console.error(err);
       });
   }
+
+  libraryRender = () => {
+    return (
+      <div>
+        <LibraryData data={this.state.libraryData} />
+      </div>
+    );
+  };
 
   render() {
     let movieList = this.state.movieData.map((item) => {
