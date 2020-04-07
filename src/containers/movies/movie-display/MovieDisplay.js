@@ -1,6 +1,7 @@
 import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
 import "./movieDisplay.css";
+import MovieModal from "../movie-modal/MovieModal";
 
 const movieUrl = "https://tv-movie-api.herokuapp.com/movie";
 
@@ -36,12 +37,12 @@ class MovieDisplay extends React.Component {
             <Card.Img variant="top" src={item.image} />
             <Card.Body className="cardfooter">
               <Card.Title></Card.Title>
-              {/* <Modalmovies
+              <MovieModal
                 description={item.description}
                 title={item.name}
                 rating={item.rating}
                 releaseDate={item.releaseDate}
-              /> */}
+              />
             </Card.Body>
           </Card>
         </div>

@@ -9,9 +9,9 @@
   margin-top: -23px;
 }
 .modal {
-  background-image: url("../Moviegif.gif");
+  /* background-image: url("../Moviegif.gif");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
   font-family: "Mada", sans-serif;
   font-size: 20px;
 }

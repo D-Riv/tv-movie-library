@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
+import "./movie-modal.css";
 
 const MovieModal = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  const myList = () => libraryData.push(props.title);
-  console.log(props);
+  // const myList = () => libraryData.push(props.title);
+  // console.log(props);
   return (
     <>
       <div className="buttons">
@@ -24,7 +25,7 @@ const MovieModal = (props) => {
           }}
         ></i>
 
-        <i
+        {/* <i
           className="fas fa-plus-circle"
           onClick={myList}
           style={{
@@ -32,7 +33,7 @@ const MovieModal = (props) => {
             cursor: "pointer",
             color: "lightblue",
           }}
-        ></i>
+        ></i> */}
       </div>
 
       <Modal show={show} onHide={handleClose} centered className="modal">
@@ -55,7 +56,8 @@ const MovieModal = (props) => {
       </Modal>
     </>
   );
-  return <div className="modalContainer"></div>;
+  // return <div className="modalContainer"></div>;
 };
+// render(<MovieModal />);
 
 export default MovieModal;
