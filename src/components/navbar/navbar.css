@@ -1,12 +1,24 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
   background-color: black;
 }
+.navbar-title {
+  color: #ffffff;
+  margin: 0 50px;
+  padding: 0;
+  overflow: hidden;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  margin: 0 50px;
+  padding: 0;
+  overflow: hidden;
+}
 
-li a {
+li {
   display: block;
   color: white;
   text-align: center;
@@ -14,6 +26,9 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+li:hover {
   background-color: rgb(185, 21, 21);
+}
+a:hover {
+  text-decoration: none;
 }
