@@ -15,6 +15,7 @@ class Form extends Component {
       rating: "",
       releaseDate: "",
       image: "",
+      display: false,
     };
   }
   changeHandler = (e) => {
@@ -41,7 +42,24 @@ class Form extends Component {
       .catch((err) => {
         console.log(err);
       });
+    this.setState({
+      name: "",
+      description: "",
+      rating: "",
+      releaseDate: "",
+      image: "",
+    });
+    if (this.state.display == false) {
+      this.setState({ value: "Your movie has been added!" });
+    }
   };
+
+  // displayAlert = (e) => {
+  //   e.preventDefault();
+  //   if (this.state.display == false) {
+  //     this.setState({ value: "Your movie has been added!" });
+  //   }
+  // };
 
   render() {
     const { name, description, rating, releaseDate, image } = this.state;
@@ -102,7 +120,7 @@ class Form extends Component {
             />
           </div>
           <div className="form-greet">
-            <h2>Your movie has been added!</h2>
+            <h2>{this.state.value}</h2>
           </div>
           <button className="form-submit" type="submit">
             Submit
