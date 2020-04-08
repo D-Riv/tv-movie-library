@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../Home";
-import Shows from "../Shows";
+import Shows from "../shows/Shows";
 import Movies from "../movies/Movies";
 import Library from "../watch-library/Library";
 
