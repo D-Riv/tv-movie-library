@@ -5,6 +5,7 @@ import Home from "../Home";
 import Shows from "../shows/Shows";
 import Movies from "../movies/Movies";
 import Library from "../watch-library/Library";
+import Form from "../Form";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route path="/movies" component={Movies} />
           <Route path="/shows" component={Shows} />
+          <Route path="/form" component={Form} />
+
           <Route path="/library" component={Library} />
         </Switch>
       </Router>

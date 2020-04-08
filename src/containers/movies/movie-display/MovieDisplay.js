@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
 import "./movieDisplay.css";
 import MovieModal from "../movie-modal/MovieModal";
+import { Link } from "react-router-dom";
 // import LibraryData from "../../watch-library/LibraryData";
 
 const movieUrl = "https://tv-movie-api.herokuapp.com/movie";
@@ -85,7 +86,11 @@ class MovieDisplay extends React.Component {
             type="text"
             onChange={this.searchMovie}
           />
+          <Link to="/form">
+            <button className="add-movie">Add Movie</button>
+          </Link>
         </div>
+
         <div className="movieContainer">
           {movieList}
           {/* <LibraryData data={this.state.libraryData} />; */}
