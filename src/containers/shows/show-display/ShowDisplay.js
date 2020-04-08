@@ -3,6 +3,7 @@ import { Card, Modal, Button } from "react-bootstrap";
 import "./show-display.css";
 import ShowModal from "../show-modal/ShowModal";
 import { Link } from "react-router-dom";
+
 // import LibraryData from "../../watch-library/LibraryData";
 
 const showsUrl = "https://tv-movie-api.herokuapp.com/tv";
@@ -78,6 +79,10 @@ class ShowDisplay extends React.Component {
           });
       };
 
+      const editShow = () => {
+        return;
+      };
+
       return (
         <div className="showList" key={item.id}>
           <Card style={{ width: "15rem", border: "none" }}>
@@ -90,6 +95,7 @@ class ShowDisplay extends React.Component {
                 rating={item.rating}
                 releaseDate={item.releaseDate}
                 delete={deleteShow}
+                // edit={editShow}
               />
             </Card.Body>
           </Card>

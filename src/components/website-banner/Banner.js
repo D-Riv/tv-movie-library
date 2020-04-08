@@ -35,6 +35,7 @@ const Styles = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    padding: 0 300px;
     margin-top: 150px;
     font-family: "Roboto", sans-serif;
   }
@@ -53,7 +54,7 @@ export const Jumbotron = () => (
       <div className="info">
         <h1 className="banner-title">FLIX.INFO</h1>
         <p className="banner-description">
-          Get the Latest Details on You Favorite Movies and Shows!
+          Get the Latest Details on Your Favorite Movies and Shows!
         </p>
       </div>
       <div className="buttContainer">

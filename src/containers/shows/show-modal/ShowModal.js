@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./show-modal.css";
+import EditShow from "../../update/EditShow";
 
 const ShowModal = (props) => {
   const [show, setShow] = useState(false);
@@ -50,17 +51,7 @@ const ShowModal = (props) => {
           Release Date: {props.releaseDate}
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
-          <Button variant="secondary" onClick={props.edit}>
-            <i
-              class="fas fa-edit"
-              // onClick={props.edit}
-              style={{
-                fontSize: "20px",
-                cursor: "pointer",
-                color: "#ffffff",
-              }}
-            ></i>
-          </Button>
+          <EditShow />
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

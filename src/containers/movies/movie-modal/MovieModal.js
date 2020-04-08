@@ -27,12 +27,20 @@ const MovieModal = (props) => {
             fontSize: "20px",
             cursor: "pointer",
             color: "#ffffff",
+            margin: "5px",
           }}
         ></i>
       </div>
 
       <Modal show={show} onHide={handleClose} centered className="modal">
-        <Modal.Header style={{ backgroundColor: "black", color: "white" }}>
+        <Modal.Header
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
           <Modal.Title className="modalhead">{props.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: "black", color: "white" }}>
