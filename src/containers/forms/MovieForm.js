@@ -54,13 +54,6 @@ class MovieForm extends Component {
     }
   };
 
-  // displayAlert = (e) => {
-  //   e.preventDefault();
-  //   if (this.state.display == false) {
-  //     this.setState({ value: "Your movie has been added!" });
-  //   }
-  // };
-
   render() {
     const { name, description, rating, releaseDate, image } = this.state;
     return (

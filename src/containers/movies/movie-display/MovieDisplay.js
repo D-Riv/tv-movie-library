@@ -48,16 +48,37 @@ class MovieDisplay extends React.Component {
 
   render() {
     let movieList = this.state.movieData.map((item) => {
-      const myList = () => {
-        this.state.movieData.forEach((movie) => {
-          // console.log(movie._id);
-          // console.log(item.name);
-          if (movie.name == item.name) {
-            this.state.libraryData.push(movie);
-          }
-        });
-        console.log(this.state.libraryData);
+      // const myList = () => {
+      //   this.state.movieData.forEach((movie) => {
+      //     // console.log(movie._id);
+      //     // console.log(item.name);
+      //     if (movie.name == item.name) {
+      //       this.state.libraryData.push(movie);
+      //     }
+      //   });
+      //   console.log(this.state.libraryData);
+      // };
+
+      const deleteMovie = () => {
+        console.log(item.name);
+
+        fetch(movieUrl + "/" + item.name, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json, charset=UTF-8" },
+        })
+          .then((res) => {
+            res.json();
+            // console.log(res);
+          })
+          .then((res) => {
+            console.log(res);
+            window.location.reload();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       };
+
       return (
         <div className="movieList" key={item.id}>
           <Card style={{ width: "15rem", border: "none" }}>
@@ -69,7 +90,7 @@ class MovieDisplay extends React.Component {
                 title={item.name}
                 rating={item.rating}
                 releaseDate={item.releaseDate}
-                delete={myList}
+                delete={deleteMovie}
               />
             </Card.Body>
           </Card>
