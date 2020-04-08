@@ -127,10 +127,10 @@ class Form extends Component {
           </button>
         </form>
         <div className="form-returns">
-          <Link>
+          <Link to="/movies">
             <button className="form-submit">Return to Movies</button>
           </Link>
-          <Link>
+          <Link to="/shows">
             <button className="form-submit">Return to Shows</button>
           </Link>
         </div>

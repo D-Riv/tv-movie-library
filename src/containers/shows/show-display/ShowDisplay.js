@@ -2,6 +2,7 @@ import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
 import "./show-display.css";
 import ShowModal from "../show-modal/ShowModal";
+import { Link } from "react-router-dom";
 // import LibraryData from "../../watch-library/LibraryData";
 
 const showsUrl = "https://tv-movie-api.herokuapp.com/tv";
@@ -84,6 +85,9 @@ class ShowDisplay extends React.Component {
             type="text"
             onChange={this.searchShow}
           />
+          <Link to="/form2">
+            <button className="add-movie">Add a Show</button>
+          </Link>
         </div>
         <div className="showsContainer">
           {showList}

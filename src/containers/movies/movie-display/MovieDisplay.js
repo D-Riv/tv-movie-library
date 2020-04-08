@@ -87,7 +87,7 @@ class MovieDisplay extends React.Component {
             onChange={this.searchMovie}
           />
           <Link to="/form">
-            <button className="add-movie">Add Movie</button>
+            <button className="add-movie">Add a Movie</button>
           </Link>
         </div>
 
