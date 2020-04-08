@@ -1,5 +1,11 @@
 .form-container {
-  background-color: #000000;
+  /* background-color: #000000; */
+  background: url(../../images/homeImage.jpg) no-repeat bottom
+    rgba(0, 0, 0, 0.8);
+  background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)),
+    url(../../images/homeImage.jpg);
+  background-size: cover;
+  height: 100vh;
 }
 .movie-form {
   background-color: #ffffff;
@@ -17,7 +23,7 @@
   color: #000000;
   font-family: "Mada", sans-serif;
 
-  font-size: 20px;
+  font-size: 50px;
 }
 .form-submit {
   padding: 10px;
@@ -26,7 +32,24 @@
   background-color: #e50914;
   border-radius: 5px;
   border: none;
+  margin: 20px;
 }
 .form-submit:hover {
   background-color: #ff0000;
+}
+.form-input-field {
+  /* padding: 5px 50px; */
+  width: 500px;
+  text-align: left;
+}
+.form-input-field::-webkit-input-placeholder {
+  text-align: left;
+}
+.form-returns {
+  text-align: center;
+}
+.form-greet {
+  background-color: turquoise;
+  margin: 0 100px;
+  display: none;
 }

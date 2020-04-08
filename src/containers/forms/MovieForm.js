@@ -49,11 +49,11 @@ class Form extends Component {
       <div className="form-container">
         <Navbar />
         <form className="movie-form" onSubmit={this.submitHandler}>
-          <h1>Submit Movie</h1>
+          <h1 className="form-header">Submit Movie</h1>
 
           <div className="form-inputs">
-            {/* <h1 className="form-header">Movie Title: </h1> */}
             <input
+              className="form-input-field"
               placeholder="Movie Title"
               type="text"
               name="name"
@@ -62,8 +62,8 @@ class Form extends Component {
             />
           </div>
           <div className="form-inputs">
-            {/* <h1 className="form-header">Movie Description:</h1> */}
             <input
+              className="form-input-field"
               placeholder="Movie Description"
               type="text"
               name="description"
@@ -72,8 +72,8 @@ class Form extends Component {
             />
           </div>
           <div className="form-inputs">
-            {/* <h1 className="form-header">Movie Rating:</h1> */}
             <input
+              className="form-input-field"
               placeholder="Movie Rating"
               type="text"
               name="rating"
@@ -82,8 +82,8 @@ class Form extends Component {
             />
           </div>
           <div className="form-inputs">
-            {/* <h1 className="form-header">Movie Release Date:</h1> */}
             <input
+              className="form-input-field"
               placeholder="Movie Release Date"
               type="text"
               name="releaseDate"
@@ -92,8 +92,8 @@ class Form extends Component {
             />
           </div>
           <div className="form-inputs">
-            {/* <h1 className="form-header">Movie Image URL:</h1> */}
             <input
+              className="form-input-field"
               placeholder="Movie Image URL"
               type="text"
               name="image"
@@ -101,16 +101,21 @@ class Form extends Component {
               onChange={this.changeHandler}
             />
           </div>
+          <div className="form-greet">
+            <h2>Your movie has been added!</h2>
+          </div>
           <button className="form-submit" type="submit">
             Submit
           </button>
         </form>
-        <Link>
-          <button>Return to Movies</button>
-        </Link>
-        <Link>
-          <button>Return to Shows</button>
-        </Link>
+        <div className="form-returns">
+          <Link>
+            <button className="form-submit">Return to Movies</button>
+          </Link>
+          <Link>
+            <button className="form-submit">Return to Shows</button>
+          </Link>
+        </div>
       </div>
     );
   }
