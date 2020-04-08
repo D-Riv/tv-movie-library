@@ -1,6 +1,6 @@
 import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
-// import "./movieDisplay.css";
+import "./show-display.css";
 // import MovieModal from "../movie-modal/MovieModal";
 // import LibraryData from "../../watch-library/LibraryData";
 
