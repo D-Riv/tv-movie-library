@@ -78,8 +78,9 @@ class MovieDisplay extends React.Component {
 
     return (
       <div>
-        <div>
+        <div className="crud-container">
           <input
+            className="search-bar"
             placeholder="Search for a movie!"
             type="text"
             onChange={this.searchMovie}

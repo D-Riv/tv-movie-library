@@ -22,3 +22,13 @@
   background-color: rgb(8, 8, 8);
   height: 3rem;
 }
+.crud-container {
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+}
+.search-bar {
+  font-family: "Mada", sans-serif;
+
+  padding: 5px 20px;
+}
