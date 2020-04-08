@@ -5,7 +5,7 @@ import Home from "../Home";
 import Shows from "../shows/Shows";
 import Movies from "../movies/Movies";
 import Library from "../watch-library/Library";
-import Form from "../Form";
+import Form from "../forms/MovieForm";
 
 function App() {
   return (
