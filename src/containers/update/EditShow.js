@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "../shows/show-modal/show-modal.css";
 
+const url = "https://tv-movie-api.herokuapp.com/tv";
+
 const UpdateShow = (props) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -10,8 +12,42 @@ const UpdateShow = (props) => {
   const [name, description, rating, releaseDate, image] = useState("");
 
   const changeHandler = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
+    const { value } = e.target.name;
+    // const(e.target.value);
   };
+
+  const saveUpdate = (e) => {
+    e.preventDefault();
+    // console.log(this.state);
+    fetch(url, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json; charset=UTF-8" },
+      body: JSON.stringify({
+        title: { name },
+        description: { description },
+        rating: { rating },
+        releaseDate: { releaseDate },
+        image: { image },
+      }),
+    })
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    this.setState({
+      name: "",
+      description: "",
+      rating: "",
+      releaseDate: "",
+      image: "",
+    });
+    if (this.state.display == false) {
+      this.setState({ value: "Your show has been added!" });
+    }
+  };
+
   // const { name, description, rating, releaseDate, image } = this.state;
 
   return (
@@ -44,7 +80,7 @@ const UpdateShow = (props) => {
               type="text"
               name="name"
               value={name}
-              onChange={this.changeHandler}
+              onChange={changeHandler}
             />
           </Modal.Title>
         </Modal.Header>
@@ -55,7 +91,7 @@ const UpdateShow = (props) => {
             type="text"
             name="description"
             value={description}
-            onChange={this.changeHandler}
+            onChange={changeHandler}
           />{" "}
           <br /> <br />
           Rating:{" "}
@@ -65,7 +101,7 @@ const UpdateShow = (props) => {
             type="text"
             name="rating"
             value={rating}
-            onChange={this.changeHandler}
+            onChange={changeHandler}
           />{" "}
           <br /> <br />
           Release Date:{" "}
@@ -75,7 +111,7 @@ const UpdateShow = (props) => {
             type="text"
             name="releaseDate"
             value={releaseDate}
-            onChange={this.changeHandler}
+            onChange={changeHandler}
           />
           Image URL:{" "}
           <input
@@ -84,11 +120,11 @@ const UpdateShow = (props) => {
             type="text"
             name="image"
             value={image}
-            onChange={this.changeHandler}
+            onChange={changeHandler}
           />
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
-          <Button variant="secondary" onClick={props.edit}>
+          <Button variant="secondary" onClick={saveUpdate}>
             <i
               class="far fa-save"
               // onClick={props.edit}
