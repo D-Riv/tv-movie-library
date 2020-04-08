@@ -6,7 +6,7 @@ import ShowModal from "../show-modal/ShowModal";
 
 const showsUrl = "https://tv-movie-api.herokuapp.com/tv";
 
-class MovieDisplay extends React.Component {
+class ShowDisplay extends React.Component {
   constructor(props) {
     super(props);
 
@@ -15,7 +15,7 @@ class MovieDisplay extends React.Component {
       libraryData: [],
       search: "",
     };
-    this.searchShows = this.searchShows.bind(this);
+    this.searchShow = this.searchShow.bind(this);
   }
 
   componentDidMount() {
@@ -32,14 +32,13 @@ class MovieDisplay extends React.Component {
         console.error(err);
       });
   }
-  searchShows(e) {
+  searchShow(e) {
     this.setState({ search: e.target.value });
     if (e.target.value == "") {
-      // this.setState({ movieData: [] });
       this.componentDidMount();
     } else {
-      let filter = this.state.showsData.filter((shows) =>
-        shows.name.toLowerCase().includes(e.target.value.toLowerCase())
+      let filter = this.state.showsData.filter((show) =>
+        show.title.toLowerCase().includes(e.target.value.toLowerCase())
       );
       this.setState({ showsData: filter });
     }
@@ -65,7 +64,7 @@ class MovieDisplay extends React.Component {
               <Card.Title></Card.Title>
               <ShowModal
                 description={item.description}
-                title={item.name}
+                title={item.title}
                 rating={item.rating}
                 releaseDate={item.releaseDate}
                 library={myList}
@@ -81,9 +80,9 @@ class MovieDisplay extends React.Component {
         <div className="crud-container">
           <input
             className="search-bar"
-            placeholder="Search for a movie!"
+            placeholder="Search for a show!"
             type="text"
-            onChange={this.searchMovie}
+            onChange={this.searchShow}
           />
         </div>
         <div className="showsContainer">
@@ -95,4 +94,4 @@ class MovieDisplay extends React.Component {
   }
 }
 
-export default MovieDisplay;
+export default ShowDisplay;
