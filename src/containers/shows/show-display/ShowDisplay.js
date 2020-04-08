@@ -47,16 +47,37 @@ class ShowDisplay extends React.Component {
 
   render() {
     let showList = this.state.showsData.map((item) => {
-      const myList = () => {
-        this.state.showsData.forEach((show) => {
-          // console.log(movie._id);
-          // console.log(item.name);
-          if (show.name == item.name) {
-            this.state.libraryData.push(show);
-          }
-        });
-        console.log(this.state.libraryData);
+      // const myList = () => {
+      //   this.state.showsData.forEach((show) => {
+      //     // console.log(movie._id);
+      //     // console.log(item.name);
+      //     if (show.name == item.name) {
+      //       this.state.libraryData.push(show);
+      //     }
+      //   });
+      //   console.log(this.state.libraryData);
+      // };
+
+      const deleteShow = () => {
+        console.log(item);
+
+        fetch(showsUrl + "/" + item.title, {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json, charset=UTF-8" },
+        })
+          .then((res) => {
+            res.json();
+            // console.log(res);
+          })
+          .then((res) => {
+            console.log(res);
+            window.location.reload();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       };
+
       return (
         <div className="showList" key={item.id}>
           <Card style={{ width: "15rem", border: "none" }}>
@@ -68,7 +89,7 @@ class ShowDisplay extends React.Component {
                 title={item.title}
                 rating={item.rating}
                 releaseDate={item.releaseDate}
-                library={myList}
+                delete={deleteShow}
               />
             </Card.Body>
           </Card>

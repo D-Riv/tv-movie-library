@@ -22,7 +22,7 @@ const ShowModal = (props) => {
 
         <i
           className="fas fa-plus-circle"
-          onClick={props.library}
+          onClick={props.delete}
           style={{
             fontSize: "30px",
             cursor: "pointer",
