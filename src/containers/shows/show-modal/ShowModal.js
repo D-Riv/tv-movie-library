@@ -21,20 +21,26 @@ const ShowModal = (props) => {
         ></i>
 
         <i
-          className="fas fa-plus-circle"
+          className="fas fa-trash-alt"
           onClick={props.delete}
           style={{
-            fontSize: "30px",
+            fontSize: "20px",
             cursor: "pointer",
-            color: "lightblue",
+            color: "#ffffff",
+            margin: "5px",
           }}
         ></i>
       </div>
 
       <Modal show={show} onHide={handleClose} centered className="modal">
         <Modal.Header
-          closeButton
-          style={{ backgroundColor: "black", color: "white" }}
+          // closeButton
+          style={{
+            backgroundColor: "black",
+            color: "white",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
         >
           <Modal.Title className="modalhead">{props.title}</Modal.Title>
         </Modal.Header>
@@ -44,6 +50,17 @@ const ShowModal = (props) => {
           Release Date: {props.releaseDate}
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
+          <Button variant="secondary" onClick={props.edit}>
+            <i
+              class="fas fa-edit"
+              // onClick={props.edit}
+              style={{
+                fontSize: "20px",
+                cursor: "pointer",
+                color: "#ffffff",
+              }}
+            ></i>
+          </Button>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
