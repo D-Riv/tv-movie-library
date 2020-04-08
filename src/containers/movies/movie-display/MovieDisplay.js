@@ -69,7 +69,7 @@ class MovieDisplay extends React.Component {
                 title={item.name}
                 rating={item.rating}
                 releaseDate={item.releaseDate}
-                library={myList}
+                delete={myList}
               />
             </Card.Body>
           </Card>

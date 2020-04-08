@@ -51,9 +51,9 @@ export const Jumbotron = () => (
     <Jumbo fluid className="jumbo">
       {/* <div className="overlay"></div> */}
       <div className="info">
-        <h1 className="banner-title">CHILLFLIX</h1>
+        <h1 className="banner-title">FLIX.INFO</h1>
         <p className="banner-description">
-          Watch Your Favorite Movies and Tv Shows!
+          Get the Latest Details on You Favorite Movies and Shows!
         </p>
       </div>
       <div className="buttContainer">
@@ -66,12 +66,12 @@ export const Jumbotron = () => (
         <Link to="/Shows">
           <Button label="Shows" />
         </Link>
-        <br />
+        {/* <br />
 
-        <br />
-        <Link to="/Library">
+        <br /> */}
+        {/* <Link to="/Library">
           <Button label="Library" />
-        </Link>
+        </Link> */}
       </div>
     </Jumbo>
   </Styles>

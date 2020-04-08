@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "../Home";
 import Shows from "../shows/Shows";
 import Movies from "../movies/Movies";
-import Library from "../watch-library/Library";
+// import Library from "../watch-library/Library";
 import MovieForm from "../forms/MovieForm";
 import ShowForm from "../forms/ShowForm";
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/movieform" component={MovieForm} />
           <Route path="/showform" component={ShowForm} />
 
-          <Route path="/library" component={Library} />
+          {/* <Route path="/library" component={Library} /> */}
         </Switch>
       </Router>
     </React.Fragment>

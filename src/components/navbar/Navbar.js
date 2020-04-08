@@ -5,7 +5,7 @@ import "./navbar.css";
 const Navbar = () => {
   return (
     <div className="navbar-container">
-      <h1 className="navbar-title">Chillflix</h1>
+      <h1 className="navbar-title">FLIX.INFO</h1>
       <ul>
         <Link to="/">
           <li>Home</li>
@@ -16,9 +16,9 @@ const Navbar = () => {
         <Link to="/shows">
           <li>Shows</li>
         </Link>
-        <Link to="/library">
+        {/* <Link to="/library">
           <li>Library</li>
-        </Link>
+        </Link> */}
       </ul>
     </div>
   );
