@@ -31,12 +31,6 @@ class MovieDisplay extends React.Component {
       });
   }
 
-  // libraryRender = () => {
-  //   return (
-  //     <div>
-  //     </div>
-  //   );
-
   render() {
     let movieList = this.state.movieData.map((item) => {
       const myList = () => {
