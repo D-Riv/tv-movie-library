@@ -2,7 +2,7 @@ import React from "react";
 import { Card, Modal, Button } from "react-bootstrap";
 import "./movieDisplay.css";
 import MovieModal from "../movie-modal/MovieModal";
-import LibraryData from "../../watch-library/LibraryData";
+// import LibraryData from "../../watch-library/LibraryData";
 
 const movieUrl = "https://tv-movie-api.herokuapp.com/movie";
 
@@ -13,7 +13,9 @@ class MovieDisplay extends React.Component {
     this.state = {
       movieData: [],
       libraryData: [],
+      search: "",
     };
+    this.searchMovie = this.searchMovie.bind(this);
   }
 
   componentDidMount() {
@@ -29,6 +31,18 @@ class MovieDisplay extends React.Component {
       .catch((err) => {
         console.error(err);
       });
+  }
+  searchMovie(e) {
+    this.setState({ search: e.target.value });
+    if (e.target.value == "") {
+      // this.setState({ movieData: [] });
+      this.componentDidMount();
+    } else {
+      let filter = this.state.movieData.filter((movie) =>
+        movie.name.toLowerCase().includes(e.target.value.toLowerCase())
+      );
+      this.setState({ movieData: filter });
+    }
   }
 
   render() {
@@ -63,9 +77,18 @@ class MovieDisplay extends React.Component {
     });
 
     return (
-      <div className="movieContainer">
-        {movieList}
-        <LibraryData data={this.state.libraryData} />;
+      <div>
+        <div>
+          <input
+            placeholder="Search for a movie!"
+            type="text"
+            onChange={this.searchMovie}
+          />
+        </div>
+        <div className="movieContainer">
+          {movieList}
+          {/* <LibraryData data={this.state.libraryData} />; */}
+        </div>
       </div>
     );
   }
