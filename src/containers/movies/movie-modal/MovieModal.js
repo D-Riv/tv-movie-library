@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import "./movie-modal.css";
+import EditMovie from "../../update/EditMovie";
 
 const MovieModal = (props) => {
   const [show, setShow] = useState(false);
@@ -49,16 +50,7 @@ const MovieModal = (props) => {
           Release Date: {props.releaseDate}
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
-          <Button variant="secondary" onClick={props.edit}>
-            <i
-              class="fas fa-edit"
-              style={{
-                fontSize: "20px",
-                cursor: "pointer",
-                color: "#ffffff",
-              }}
-            ></i>
-          </Button>
+          <EditMovie name={props.title} />
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

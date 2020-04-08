@@ -91,6 +91,7 @@ class MovieDisplay extends React.Component {
                 rating={item.rating}
                 releaseDate={item.releaseDate}
                 delete={deleteMovie}
+                name={item.name}
               />
             </Card.Body>
           </Card>
