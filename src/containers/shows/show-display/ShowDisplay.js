@@ -79,10 +79,6 @@ class ShowDisplay extends React.Component {
           });
       };
 
-      const editShow = () => {
-        return;
-      };
-
       return (
         <div className="showList" key={item.id}>
           <Card style={{ width: "15rem", border: "none" }}>
@@ -95,6 +91,7 @@ class ShowDisplay extends React.Component {
                 rating={item.rating}
                 releaseDate={item.releaseDate}
                 delete={deleteShow}
+                title={item.title}
                 // edit={editShow}
               />
             </Card.Body>

@@ -51,7 +51,7 @@ const ShowModal = (props) => {
           Release Date: {props.releaseDate}
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
-          <EditShow />
+          <EditShow title={props.title} />
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>

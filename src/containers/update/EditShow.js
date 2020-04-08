@@ -9,46 +9,38 @@ const UpdateShow = (props) => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [name, description, rating, releaseDate, image] = useState("");
-
-  const changeHandler = (e) => {
-    const { value } = e.target.name;
-    // const(e.target.value);
-  };
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [rating, setRating] = useState("");
+  const [releaseDate, setReleaseDate] = useState("");
+  const [image, setImage] = useState("");
 
   const saveUpdate = (e) => {
     e.preventDefault();
     // console.log(this.state);
-    fetch(url, {
+    fetch(url + "/" + props.title, {
       method: "PUT",
       headers: { "Content-Type": "application/json; charset=UTF-8" },
       body: JSON.stringify({
-        title: { name },
-        description: { description },
-        rating: { rating },
-        releaseDate: { releaseDate },
-        image: { image },
+        title: name,
+        description: description,
+        rating: rating,
+        releaseDate: releaseDate,
+        image: image,
       }),
     })
       .then((res) => {
+        res.json();
+        // console.log(res);
+      })
+      .then((res) => {
         console.log(res);
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
       });
-    this.setState({
-      name: "",
-      description: "",
-      rating: "",
-      releaseDate: "",
-      image: "",
-    });
-    if (this.state.display == false) {
-      this.setState({ value: "Your show has been added!" });
-    }
   };
-
-  // const { name, description, rating, releaseDate, image } = this.state;
 
   return (
     <>
@@ -80,7 +72,7 @@ const UpdateShow = (props) => {
               type="text"
               name="name"
               value={name}
-              onChange={changeHandler}
+              onChange={(e) => setName(e.target.value)}
             />
           </Modal.Title>
         </Modal.Header>
@@ -91,7 +83,7 @@ const UpdateShow = (props) => {
             type="text"
             name="description"
             value={description}
-            onChange={changeHandler}
+            onChange={(e) => setDescription(e.target.value)}
           />{" "}
           <br /> <br />
           Rating:{" "}
@@ -101,7 +93,7 @@ const UpdateShow = (props) => {
             type="text"
             name="rating"
             value={rating}
-            onChange={changeHandler}
+            onChange={(e) => setRating(e.target.value)}
           />{" "}
           <br /> <br />
           Release Date:{" "}
@@ -111,7 +103,7 @@ const UpdateShow = (props) => {
             type="text"
             name="releaseDate"
             value={releaseDate}
-            onChange={changeHandler}
+            onChange={(e) => setReleaseDate(e.target.value)}
           />
           Image URL:{" "}
           <input
@@ -120,7 +112,7 @@ const UpdateShow = (props) => {
             type="text"
             name="image"
             value={image}
-            onChange={changeHandler}
+            onChange={(e) => setImage(e.target.value)}
           />
         </Modal.Body>
         <Modal.Footer style={{ backgroundColor: "black", color: "white" }}>
