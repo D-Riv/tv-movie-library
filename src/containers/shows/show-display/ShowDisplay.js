@@ -85,7 +85,7 @@ class ShowDisplay extends React.Component {
             type="text"
             onChange={this.searchShow}
           />
-          <Link to="/form2">
+          <Link to="/showform">
             <button className="add-movie">Add a Show</button>
           </Link>
         </div>

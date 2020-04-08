@@ -12,6 +12,11 @@
   margin: 50px 500px;
   text-align: center;
 }
+.show-form {
+  background-color: #ffffff;
+  margin: 50px 500px;
+  text-align: center;
+}
 .form-inputs {
   display: flex;
   justify-content: center;

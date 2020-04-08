@@ -3,9 +3,9 @@ import Navbar from "../../components/navbar/Navbar";
 import { Link } from "react-router-dom";
 import "./forms.css";
 
-const url = "https://tv-movie-api.herokuapp.com/movie";
+const url = "https://tv-movie-api.herokuapp.com/tv";
 
-class MovieForm extends Component {
+class ShowForm extends Component {
   constructor(props) {
     super(props);
 
@@ -29,7 +29,7 @@ class MovieForm extends Component {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        name: this.state.name,
+        title: this.state.name,
         description: this.state.description,
         rating: this.state.rating,
         releaseDate: this.state.releaseDate,
@@ -50,7 +50,7 @@ class MovieForm extends Component {
       image: "",
     });
     if (this.state.display == false) {
-      this.setState({ value: "Your movie has been added!" });
+      this.setState({ value: "Your show has been added!" });
     }
   };
 
@@ -66,13 +66,13 @@ class MovieForm extends Component {
     return (
       <div className="form-container">
         <Navbar />
-        <form className="movie-form" onSubmit={this.submitHandler}>
-          <h1 className="form-header">Submit Movie</h1>
+        <form className="show-form" onSubmit={this.submitHandler}>
+          <h1 className="form-header">Submit Show</h1>
 
           <div className="form-inputs">
             <input
               className="form-input-field"
-              placeholder="Movie Title"
+              placeholder="Show Title"
               type="text"
               name="name"
               value={name}
@@ -82,7 +82,7 @@ class MovieForm extends Component {
           <div className="form-inputs">
             <input
               className="form-input-field"
-              placeholder="Movie Description"
+              placeholder="Show Description"
               type="text"
               name="description"
               value={description}
@@ -92,7 +92,7 @@ class MovieForm extends Component {
           <div className="form-inputs">
             <input
               className="form-input-field"
-              placeholder="Movie Rating"
+              placeholder="Show Rating"
               type="text"
               name="rating"
               value={rating}
@@ -102,7 +102,7 @@ class MovieForm extends Component {
           <div className="form-inputs">
             <input
               className="form-input-field"
-              placeholder="Movie Release Date"
+              placeholder="Show Release Date"
               type="text"
               name="releaseDate"
               value={releaseDate}
@@ -112,7 +112,7 @@ class MovieForm extends Component {
           <div className="form-inputs">
             <input
               className="form-input-field"
-              placeholder="Movie Image URL"
+              placeholder="Show Image URL"
               type="text"
               name="image"
               value={image}
@@ -139,4 +139,4 @@ class MovieForm extends Component {
   }
 }
 
-export default MovieForm;
+export default ShowForm;
