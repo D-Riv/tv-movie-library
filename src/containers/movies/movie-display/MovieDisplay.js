@@ -15,11 +15,20 @@ class MovieDisplay extends React.Component {
       movieData: [],
       libraryData: [],
       search: "",
+      display: "none",
     };
     this.searchMovie = this.searchMovie.bind(this);
+    this.showSpinner = this.showSpinner.bind(this);
+  }
+  showSpinner() {
+    this.setState({ display: "block" });
+  }
+  stopSpinner() {
+    this.setState({ display: "none" });
   }
 
   componentDidMount() {
+    this.showSpinner();
     fetch(movieUrl)
       .then((res) => {
         console.log(res);
@@ -28,6 +37,7 @@ class MovieDisplay extends React.Component {
       .then((movieData) => {
         console.log(movieData);
         this.setState({ movieData: movieData });
+        this.stopSpinner();
       })
       .catch((err) => {
         console.error(err);
@@ -115,6 +125,10 @@ class MovieDisplay extends React.Component {
 
         <div className="movieContainer">
           {movieList}
+          <div
+            className="spinner"
+            style={{ display: this.state.display }}
+          ></div>
           {/* <LibraryData data={this.state.libraryData} />; */}
         </div>
       </div>

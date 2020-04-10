@@ -16,11 +16,19 @@ class ShowDisplay extends React.Component {
       showsData: [],
       libraryData: [],
       search: "",
+      display: "none",
     };
     this.searchShow = this.searchShow.bind(this);
   }
+  showSpinner() {
+    this.setState({ display: "block" });
+  }
+  stopSpinner() {
+    this.setState({ display: "none" });
+  }
 
   componentDidMount() {
+    this.showSpinner();
     fetch(showsUrl)
       .then((res) => {
         console.log(res);
@@ -29,6 +37,7 @@ class ShowDisplay extends React.Component {
       .then((showsData) => {
         console.log(showsData);
         this.setState({ showsData: showsData });
+        this.stopSpinner();
       })
       .catch((err) => {
         console.error(err);
@@ -115,6 +124,10 @@ class ShowDisplay extends React.Component {
         </div>
         <div className="showsContainer">
           {showList}
+          <div
+            className="spinner"
+            style={{ display: this.state.display }}
+          ></div>
           {/* <LibraryData data={this.state.libraryData} />; */}
         </div>
       </div>
