@@ -23,11 +23,7 @@ This is a movie and tv show library built with React. The data is fetched from a
 ### Deployment
 
 To deploy the webapp utilize the link below.
-[Use this link to my project!](https://tv-movie-api.herokuapp.com/)
-
-## Implementation of CRUD
-
-Utilized controllers and routes to use CRUD on both models. Starting with get to find all movies and shows, then bringing the ability to find rating, name, and release date. Along with having the ability to update and delete to the list as required.
+[Use this link to my project!](https://tv-movie-library.netlify.com)
 
 ### Contributing
 
